@@ -7,7 +7,9 @@ Step1:--->
 
 Step2:--->
 **********
-install jdk  ---->  apt install openjdk-11-jdk -y
+install jdk  ---->  sudo apt update
+                    sudo apt install fontconfig openjdk-17-jre
+                    java -version
 
 Step3:--->
 ******
