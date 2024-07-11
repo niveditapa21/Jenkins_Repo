@@ -15,11 +15,6 @@ pipeline {
         '''
       }
     }
-    stage('webpage') {
-      steps {
-        
-        sh 'curl http://localhost'
-      }
-    }
+    
   }
 }
