@@ -5,5 +5,10 @@
 
  Add user to docker group:
  *************************
- usermod -aG docker jenkins
+ usermod -aG docker {user-name}  --->  ex: usermod -aG docker jenkins
  systemctl restart docker
+
+
+Now, restart Jenkins:
+*********************
+http://<ec2-instance-public-ip>:8080/restart
