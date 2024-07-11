@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Nginx') {
+            steps {
+                script {
+                    // Update package index and install Nginx
+                    sh '''
+                    sudo apt-get update
+                    sudo apt-get install -y nginx
+                    '''
+                }
+            }
+        }
+
+        stage('Start Nginx') {
+            steps {
+                script {
+                    // Start Nginx service
+                    sh 'sudo systemctl start nginx'
+                }
+            }
+        }
+
+        stage('Launch Webpage') {
+            steps {
+                script {
+                    // Create a simple webpage
+                    sh '''
+                    echo '<html><body><h1>Hello from Jenkins!</h1></body></html>' | sudo tee /var/www/html/index.html
+                    sudo systemctl reload nginx
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Nginx installed and started, webpage launched successfully.'
+        }
+        failure {
+            echo 'Something went wrong.'
+        }
+    }
+}
