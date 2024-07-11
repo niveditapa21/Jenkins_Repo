@@ -17,7 +17,7 @@ pipeline {
     }
     stage('webpage') {
       steps {
-        / Access the webpage URL 
+        
         sh 'curl http://localhost'
       }
     }
