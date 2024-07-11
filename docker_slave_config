@@ -6,5 +6,4 @@
  Add user to docker group:
  *************************
  usermod -aG docker jenkins
- usermod -aG docker ubuntu
  systemctl restart docker
