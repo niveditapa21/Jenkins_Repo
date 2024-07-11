@@ -17,11 +17,8 @@ pipeline {
     }
     stage('webpage') {
       steps {
-        sh '''cd /var/www/html
-        sudo rm -rf index.html
-        nano index.html
-        "hello world"
-        '''
+        / Access the webpage URL 
+        sh 'curl http://localhost'
       }
     }
   }
