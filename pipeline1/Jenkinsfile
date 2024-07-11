@@ -8,5 +8,19 @@ pipeline {
         sh 'nginx -v'
       }
     }
+    stage('start'){
+      steps {
+        sh '''systemctl start nginx'''
+      }
+    }
+    stage('webpage') {
+      steps {
+        sh '''cd /var/www/html
+        sudo rm -rf index.html
+        nano index.html
+        "hello world"
+        '''
+      }
+    }
   }
 }
