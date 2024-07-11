@@ -1,0 +1,10 @@
+ Install Docker:
+ **************
+ sudo apt update
+ sudo apt install docker.io -y
+
+ Add user to docker group:
+ *************************
+ usermod -aG docker jenkins
+ usermod -aG docker ubuntu
+ systemctl restart docker
