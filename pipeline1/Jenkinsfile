@@ -10,9 +10,9 @@ pipeline {
     }
     stage('start nginx'){
       steps {
-        sh '''sudo apt install systemd
+        sh 'sudo apt install systemd
         sudo systemctl start nginx
-        '''
+        '
       }
     }
     stage('webpage') {
