@@ -1,0 +1,10 @@
+terminal is required to read the password — jenkins deployment using bash cmd:---->
+**********************************************************************************
+
+sudo su    
+visudo -f /etc/sudoers
+
+add the following at the end of sudoer file:---> 
+________________________________________________
+
+jenkins ALL= NOPASSWD: ALL
